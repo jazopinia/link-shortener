@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://jopinia:myC0ding@cluster0-euugh.gcp.mongodb.net/test?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://<username>:<password>@cluster0-euugh.gcp.mongodb.net/test?retryWrites=true&w=majority",
     "baseUrl": "http://localhost:3000"
 }
