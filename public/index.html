@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Link Shortener</title>
+</head>
+<body>
+    
+       
+    <div class="container">
+        <h1>Link Shortener</h1>
+        <input type="text">
+        <button>Submit</button>
+        <p class="short-link"><a></a></p>
+    </div>
+    
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    const btn = document.querySelector("button");
+    const input = document.querySelector("input");
+    //const baseUrl = "http://localhost:3000/api/url/shorten"
+
+    // Button click event to post call to backend server
+    btn.addEventListener('click', (event) => {
+        console.log(input.value);
+        $.ajax({
+            type: 'post',
+            url: "http://localhost:3000/api/url/shorten",
+            contentType: 'application/json',
+            data: JSON.stringify({longUrl: input.value}),
+            dataType: 'json',
+            success: function(resultData) { 
+                console.log(resultData.shortUrl);
+                $("a").html(resultData.shortUrl).attr('href', resultData.shortUrl);
+                
+            },
+            error: function( jqXhr, textStatus, errorThrown ){
+                console.log( jqXhr );
+                console.log( textStatus );
+                console.log( errorThrown );
+            }
+
+        });
+    });
+    
+</script>
+
+</body>
+</html>

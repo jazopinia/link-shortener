@@ -1,0 +1,6 @@
+POST http://localhost:3000/api/url/shorten
+Content-Type: application/json
+
+{
+    "longUrl": "https://www.amazon.com/Apple-MacBook-1-8GHz-dual-core-Intel/dp/B07211W6X2?smid=ATVPDKIKX0DER&pf_rd_p=322a6965-551f-412b-a269-8df2cbf3b2e8&pf_rd_r=1SHP0WYCWDQZCZ3D0ZWJ"
+}
